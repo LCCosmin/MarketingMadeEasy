@@ -1,0 +1,10 @@
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=postgres
+DB_HOST=db_marketingmadeeasy
+DB_PORT=5432
+
+FRONTEND_HOST=http://localhost
+FRONTEND_PORT=4200
+
+DEBUG=True
