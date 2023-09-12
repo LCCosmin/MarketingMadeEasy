@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import debug_api, debug_db
 from app.core.settings import settings
+import logging
 
 origins = [
     "http://localhost:4200",
@@ -26,7 +27,10 @@ main_router.include_router(debug_db.router, tags=["debug_db"])
 
 @app.on_event("startup")
 def startup_func() -> None:
-    print("Startup Print ?")
+    logger = logging.getLogger("uvicorn")
+    handler = logging.StreamHandler()
+    handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    logger.addHandler(handler)
 
 @main_router.get("/version_details/")
 def read_version():

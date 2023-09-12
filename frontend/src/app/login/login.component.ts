@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   constructor(private http: HttpClient){}
   login(data: any){
-    console.log(this.http.get("https://cat-fact.herokuapp.com/facts/"));
+    console.log(data);
+    this.http.post("http://localhost:8000/api/debug_api", data).subscribe(r => console.log(r));
   }
 }
