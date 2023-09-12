@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopnavbarComponent } from './home/topnavbar/topnavbar.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import { ContactComponent } from './contact/contact.component';
     TopnavbarComponent,
     AboutComponent,
     ContactComponent,
+    DashboardComponent,
     
   ],
   imports: [
@@ -26,6 +30,8 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
