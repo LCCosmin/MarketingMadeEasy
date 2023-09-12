@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Table, text, UUID, ForeignKey, Integer
 
-from core.database import meta
+from app.core.database import meta
 
 projects = Table(
     "projects",

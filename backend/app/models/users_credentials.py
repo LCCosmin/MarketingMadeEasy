@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Table, text, UUID, ForeignKey
 
-from core.database import meta
+from app.core.database import meta
 
 users_credentials = Table(
     "users_credentials",

@@ -22,17 +22,17 @@ class Settings(BaseSettings):
 
     DEBUG:bool = Field(default=True, env="DEBUG")
     
-    DATABASE_URI: Optional[str] = None
+    DATABASE_URL: Optional[str] = None
     FRONTEND_URI: Optional[str] = None
     
-    @validator("DATABASE_URI", pre=False)
+    @validator("DATABASE_URL", pre=True)
     def db_uri_validator(
         cls, val: Optional[str], values: Dict[str, Any]
     ) -> Any:
         if isinstance(val, str):
             return val
         return(
-            f"postgresql://{values.get('DB_USER')}:"
+            f"postgresql+psycopg2://{values.get('DB_USER')}:"
             f"{values.get('DB_PASSWORD')}@"
             f"{values.get('DB_HOST')}:{values.get('DB_PORT')}"
             f"/{values.get('DB_NAME')}"
