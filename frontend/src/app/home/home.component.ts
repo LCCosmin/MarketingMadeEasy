@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 
 @Component({
   selector: 'app-home',
