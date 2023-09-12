@@ -1,8 +1,8 @@
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api import debug_api, debug_db
-from core.settings import settings
+from app.api import debug_api, debug_db
+from app.core.settings import settings
 
 origins = [
     "http://localhost:4200",

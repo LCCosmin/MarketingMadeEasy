@@ -5,8 +5,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from core.database import generate_db
-from models.users_data import users_data
+from app.core.database import generate_db
+from app.models.users_data import users_data
 
 router = APIRouter(prefix="/debug_db")
 

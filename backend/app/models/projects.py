@@ -1,11 +1,11 @@
 from sqlalchemy import Column, String, Table, text, UUID, ForeignKey, Integer
 
-from core.database import meta
+from app.core.database import meta
 
 projects = Table(
     "projects",
     meta,
-    Column("id", UUID, nullable=False, unique=True, primary_key=True, server_default=text("uuid_generate_v4()")),
+    Column("id", UUID, nullable=False, unique=True, primary_key=True, server_default=text("gen_random_uuid()")),
     Column("user_id", UUID, ForeignKey("users_data.id"), nullable=False, unique=False),
     Column("project_name", String(50), nullable=False, unique=False),
     Column("project_description", String(150), nullable=True, unique=False),
