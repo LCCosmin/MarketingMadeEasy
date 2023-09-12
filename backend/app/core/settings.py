@@ -32,7 +32,7 @@ class Settings(BaseSettings):
         if isinstance(val, str):
             return val
         return(
-            f"postgresql+psycopg2://{values.get('DB_USER')}:"
+            f"postgresql://{values.get('DB_USER')}:"
             f"{values.get('DB_PASSWORD')}@"
             f"{values.get('DB_HOST')}:{values.get('DB_PORT')}"
             f"/{values.get('DB_NAME')}"
