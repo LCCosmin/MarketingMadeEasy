@@ -3,4 +3,6 @@ html, body {
     min-height: 100vh;
     height: auto;
     margin: 0;
+    background-image: linear-gradient(270deg, #131057, #040408);
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
   }
