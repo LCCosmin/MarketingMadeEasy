@@ -1,8 +1,8 @@
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api import debug_api
-from app.core.settings import settings
+from api import debug_api, debug_db
+from core.settings import settings
 
 origins = [
     "http://localhost:4200",
@@ -21,7 +21,8 @@ app.add_middleware(
 
 main_router = APIRouter()
 
-main_router.include_router(debug_api.router, tags=["debug"])
+main_router.include_router(debug_api.router, tags=["debug_api"])
+main_router.include_router(debug_db.router, tags=["debug_db"])
 
 @app.on_event("startup")
 def startup_func() -> None:
